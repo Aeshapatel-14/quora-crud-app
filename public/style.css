@@ -1,0 +1,283 @@
+/* GOOGLE FONT IMPORT  */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* default margin/padding and setting box model*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+/* BODY SECTION */
+body{
+    min-height:100vh;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #141e30, #243b55);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+    padding:40px 20px;
+    color:#f1f5f9;
+}
+
+/* Background animation keyframes */
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+/*MAIN CONTAINER (Centers content and controls maximum width) */
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+/* NAVBAR SECTION (Header layout with title and navigation buttons)*/
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.navbar h1{
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/*  POST CARD DESIGN (GLASS EFFECT) */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    transition:0.3s ease;
+    animation:fadeInUp 0.8s ease forwards;
+    opacity:0;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 35px rgba(0,245,212,0.3);
+}
+
+/* Card entry animation */
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#00f5d4;
+}
+
+.card p{
+    margin-bottom:15px;
+    color:#cbd5e1;
+}
+
+   /* BUTTON SYSTEM (Base button styles and interactive effects) */
+.btn{
+    position:relative;
+    overflow:hidden;
+    padding:8px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
+    transition:0.3s ease;
+    display:inline-block;
+}
+
+/* Ripple click effect */
+.btn::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:rgba(255,255,255,0.3);
+    border-radius:50%;
+    transform:scale(0);
+    opacity:0;
+    transition:transform 0.5s, opacity 1s;
+}
+
+.btn:active::after{
+    transform:scale(2);
+    opacity:1;
+    transition:0s;
+}
+
+/* BUTTON VARIANTS (Different color themes for actions)*/
+
+.primary{
+    background:#00f5d4;
+    color:#0f172a;
+    font-weight:600;
+}
+
+.primary:hover{
+    box-shadow:0 0 15px #00f5d4;
+}
+
+.warning{
+    background:#f15bb5;
+    color:white;
+}
+
+.warning:hover{
+    box-shadow:0 0 15px #f15bb5;
+}
+
+.danger{
+    background:#ff006e;
+    color:white;
+}
+
+.danger:hover{
+    box-shadow:0 0 15px #ff006e;
+}
+
+/* FORM SECTION (Styling input fields and form container)*/
+
+.form-container{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    color:white;
+}
+
+textarea{
+    min-height:120px;
+}
+
+/* BACK LINK STYLE (Navigation link for returning to previous page) */
+
+.back{
+    display:inline-block;
+    margin-bottom:15px;
+    color:#00f5d4;
+    text-decoration:none;
+}
+
+.back:hover{
+    text-decoration:underline;
+}
+
+/*LOADING SCREEN (Full-screen loader with spinning animation) */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.spinner{
+    width:50px;
+    height:50px;
+    border:5px solid rgba(255,255,255,0.2);
+    border-top:5px solid #00f5d4;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{transform:rotate(360deg);}
+}
+
+/* NAVIGATION BUTTON GROUP (Aligns navbar buttons in one line) */
+
+.nav-buttons{
+    display:flex;
+    gap:12px;
+}
+
+/* POST ACTION BUTTON GROUP (Aligns View, Edit, Delete buttons horizontally)*/
+
+.actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.actions form{
+    margin:0;
+}
+
+/* GLASS BUTTON EFFECT (Transparent blurred style for action buttons)*/
+
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    color:#ffffff;
+}
+
+.glass:hover{
+    background:rgba(255,255,255,0.15);
+    transform:translateY(-3px);
+    box-shadow:0 0 10px rgba(0,245,212,0.5);
+}
+
+/* RESPONSIVE DESIGN ( Mobile layout adjustments for smaller screens) */
+
+@media(max-width:600px){
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-buttons{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card{
+        padding: 15px;
+    }
+
+    .actions{
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-box input{
+        width: 90%;
+    }
+}

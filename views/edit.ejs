@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <div id="loader">
+  <div class="spinner"></div>
+</div>
+<div class="container form-container">
+    <h2>Edit Post</h2>
+
+    <form method="POST" action="/posts/<%=post.id%>?_method=PATCH">
+        <input type="text" value="<%=post.username%>" disabled>
+        <textarea name="content" required><%= post.content %></textarea>
+        <button class="btn warning">Update</button>
+    </form>
+</div>
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("light-mode");
+}
+
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display="none";
+});
+</script>
+
+</body>
+</html>

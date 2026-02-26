@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Post Details</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+<div class="container">
+    <a href="/posts" class="back">← Back</a>
+
+    <div class="card">
+        <h3>@<%= post.username %></h3>
+        <p><%= post.content %></p>
+        <small>ID: <%= post.id %></small>
+    </div>
+</div>
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("light-mode");
+}
+
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display="none";
+});
+</script>
+
+</body>
+</html>

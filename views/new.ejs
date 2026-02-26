@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+<div class="container form-container">
+    <h2>Create New Post</h2>
+
+    <form method="POST" action="/posts">
+        <input type="text" name="username" placeholder="Enter username" required>
+        <textarea name="content" placeholder="Write your post..." required></textarea>
+        <button class="btn primary">Submit</button>
+    </form>
+</div>
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("light-mode");
+}
+
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display="none";
+});
+</script>
+
+</body>
+</html>

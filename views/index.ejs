@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<div class="container">
+
+    <div class="navbar">
+        <h1>Quora Clone</h1>
+
+        <div class="nav-buttons">
+            <a href="/posts/new" class="btn primary">+ New Post</a>
+        </div>
+    </div>
+
+    <div class="posts">
+
+        <% for(let post of posts){ %>
+            <div class="card">
+                <h3>@<%= post.username %></h3>
+                <p><%= post.content %></p>
+
+                <div class="actions">
+                    <a href="/posts/<%=post.id%>" class="btn glass">View</a>
+
+                    <a href="/posts/<%=post.id%>/edit" class="btn glass warning">
+                        Edit
+                    </a>
+
+                    <form method="POST" action="/posts/<%=post.id%>?_method=DELETE">
+                        <button class="btn glass danger">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+
+    </div>
+
+</div>
+
+<script>
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display="none";
+});
+</script>
+
+</body>
+</html>
