@@ -43,14 +43,9 @@ This project is built to understand:
 1. Clone the repository
 2. Install dependencies
 
-## How to Run
-1. Clone the repository
+Github link=>  https://github.com/Aeshapatel-14/quora-crud-app
 
-https://github.com/Aeshapatel-14/quora-crud-app
 
-3. Install dependencies
-
-npm install
 3. Start server
 4. Open browser
 
